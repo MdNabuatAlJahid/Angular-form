@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{ errorMsg }}
+  </div>
+
+  <!--form for number of tickets-->
+  <form #UserFrom="ngForm" *ngIf="!submitted" (ngSubmit)="submit()">
+    <h1>Select Your Tickets here!</h1>
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <h6>VIP Tickets:</h6>
+      </div>
+      <div class="col">
+        <button id="increase" type="button" (click)="increament(0)">+</button>
+        <p>{{ count[0] }}</p>
+        <button id="decrease" type="button" (click)="decriment(0)">-</button>
+      </div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <h6>Standard Tickets:</h6>
+      </div>
+      <div class="col">
+        <button type="button" (click)="increament(1)">+</button>
+        <p>{{ count[1] }}</p>
+        <button type="button" (click)="decriment(1)">-</button>
+      </div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <h6>Student Tickets:</h6>
+      </div>
+      <div class="col">
+        <button id="increase" type="button" (click)="increament(2)">+</button>
+        <p>{{ count[2] }}</p>
+        <button id="decrease" type="button" (click)="decriment(2)">-</button>
+      </div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <h6>Special Tickets:</h6>
+      </div>
+      <div class="col">
+        <button id="increase" type="button" (click)="increament(3)">+</button>
+        <p>{{ count[3] }}</p>
+        <button id="decrease" type="button" (click)="decriment(3)">-</button>
+      </div>
+    </div>
+    <br />
+
+    <!--Submit button for ticket number-->
+    <div class="submit-ticket-number" (click)="toggleCollapse()">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+
+  <!--form for name input-->
+  <div *ngIf="!isCollapsed">
+    <div *ngFor="let j of iterative2(4)">
+      <h1 *ngIf="count[j] > 0">{{ getName(j) }}</h1>
+      <div *ngFor="let i of iterative(j)">
+        <form>
+          <div>
+            <h1>Give first and last name</h1>
+            <div class="form-group">
+              <label>First Name</label>
+              <input
+                type="text"
+                required
+                #firstName="ngModel"
+                [class.is-invalid]="firstName.invalid && firstName.touched"
+                class="form-control"
+                name="firstName"
+                [(ngModel)]="userModel.firstName"
+              />
+              <small
+                class="text-danger"
+                [class.d-none]="firstName.valid || firstName.untouched"
+                >First name is required!</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label>Last Name</label>
+              <input
+                type="text"
+                required
+                #lastName="ngModel"
+                [class.is-invalid]="lastName.invalid && lastName.touched"
+                class="form-control"
+                name="lastName"
+                [(ngModel)]="userModel.lastName"
+              />
+              <small
+                class="text-danger"
+                [class.d-none]="lastName.valid || lastName.untouched"
+                >Last name is required!</small
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Submit button for names-->
+  <div *ngIf="!isCollapsed" class="submit-names">
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</div>

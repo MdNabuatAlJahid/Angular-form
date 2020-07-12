@@ -1,0 +1,57 @@
+[
+  {
+    "id": "03c27e19-aaa6-45b7-8276-74725df644bc",
+
+    "name": "VIP Ticket",
+
+    "sorting": 1,
+
+    "description": "asdf",
+
+    "maxTicketsPerOrder": 1,
+
+    "soldOut": false
+  },
+
+  {
+    "id": "61655dee-03e4-4128-b22c-79139e644d20",
+
+    "name": "Standard",
+
+    "sorting": 0,
+
+    "description": "asdf",
+
+    "maxTicketsPerOrder": 10,
+
+    "soldOut": false
+  },
+
+  {
+    "id": "6638cccc-02d2-4c5e-a779-7ce0c385f004",
+
+    "name": "Student",
+
+    "sorting": 2,
+
+    "description": "test",
+
+    "maxTicketsPerOrder": 5,
+
+    "soldOut": false
+  },
+
+  {
+    "id": "61655dee-03e4-4128-b25c-79139e644d20",
+
+    "name": "Special Ticket",
+
+    "sorting": 0,
+
+    "description": "asdf",
+
+    "maxTicketsPerOrder": 10,
+
+    "soldOut": true
+  }
+]
